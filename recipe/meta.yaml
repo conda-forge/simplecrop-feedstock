@@ -15,13 +15,11 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
+    - {{ compiler('cxx') }}      # [win]
     - {{ compiler('fortran') }}
-    - {{ compiler('cxx') }}  # [win]
     - cmake
   host:
-    - {{ compiler('fortran') }}
-    - {{ compiler('cxx') }}  # [win]
-    - {{ stdlib("c") }}    # [win]
 
 test:
   source_files:
