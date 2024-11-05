@@ -11,17 +11,14 @@ source:
 
 build:
   number: 1
-  skip: true  # [win and vc<14]
 
 requirements:
   build:
-    - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}  # [win]
+    - {{ compiler('fortran') }}
     - cmake
   host:
-    - {{ compiler('fortran') }}
-    - {{ compiler('cxx') }}  # [win]
-    - {{ stdlib("c") }}    # [win]
 
 test:
   source_files:
